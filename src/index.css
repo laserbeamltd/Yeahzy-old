@@ -1,0 +1,104 @@
+/* Fonts are self-hosted via @fontsource-variable (imported in main.tsx). */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Yeahzy design tokens (from the Yeahzy design system) */
+:root {
+  --brand: #ffe500;
+  --on-brand: #0a0a0a;
+  --ink: #0a0a0a;
+  --surface-100: #161616;
+  --surface-200: #1c1c1c;
+  --surface-300: #262626;
+  --line-100: #1f1f1f;
+  --line-200: #2a2a2a;
+  --line-300: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --overlay: rgba(0, 0, 0, 0.45);
+  --backdrop: rgba(0, 0, 0, 0.62);
+  --scrim: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.9) 92%);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+body {
+  font-family: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Type styles from the design system */
+@layer components {
+  .type-logo {
+    @apply font-display font-extrabold;
+    font-size: 96px;
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+  .type-hero {
+    @apply font-display font-extrabold;
+    font-size: 48px;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+  .type-title {
+    @apply font-display font-extrabold;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .type-card-title {
+    @apply font-display font-extrabold;
+    font-size: 38px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .type-sheet-title {
+    @apply font-display font-extrabold;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .type-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+@keyframes sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
